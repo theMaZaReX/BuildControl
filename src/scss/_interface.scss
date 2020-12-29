@@ -1,0 +1,184 @@
+body{
+    min-width: 320px;
+    font-family: 'Inter Regular', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color:$text-color;
+}
+    
+// Заголовки и текст
+.title{
+    font-family:'Inter Regular';
+    font-size:32px;
+    line-height:48px;
+    text-align:center;
+    color:$black;
+    padding-bottom:17px;
+}
+
+@media (max-width:576px){
+    .title{
+        font-size:24px;
+        line-height: 34px;
+    }
+}
+
+.title-second{
+    font-size:18px;
+    color:$black;
+   
+    line-height: 24px;
+}
+
+.text{
+    display:inline-block;
+    font-size:20px;
+    line-height:32px;
+    color:$text-color;
+}
+
+@media (max-width:576px){
+    .text{
+        font-size:16px; 
+        line-height: 27px;
+    }
+}
+
+// Лид-абзац
+.lead{
+    text-align: center;
+}
+
+//блок "Подробнее"
+.more{
+    font-family: 'Inter Medium';
+    font-weight: 500;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#F6F8F9;
+    max-width: 1057px;
+    height: 130px;
+    margin:0 auto;
+    padding: 0 40px;
+    &__text{
+        font-size: 18px;
+        line-height: 32px;
+        display: flex;
+        align-items: center;
+    }
+    &__icon{
+        margin-right:26px;
+    }
+
+}
+
+@media (max-width:992px){
+    .more{
+        padding: 0 15px;
+    }
+}
+
+@media (max-width:576px){
+    .more{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+       &__text{
+           line-height: 21px;
+           font-size: 16px;
+       }
+       &__icon{
+           margin-right: 13px;
+       }
+       &__btn{
+           margin-left: 5px;
+       }
+    }
+}
+
+@media (max-width:320px){
+    .more{
+       padding: 0px 10px;
+       &__text{
+           line-height: 21px;
+           font-size: 14px;
+       }
+    }
+}
+
+
+.accent{
+    display:inline-block;
+    color:$black;
+    background: linear-gradient(0deg, rgba(255,208,66,1) 50%, rgba(255,255,255,1) 50%);
+}
+
+@mixin btn($background-color, $color, $pd-ud, $pd-lr, $border: 1px solid #DADEDF, $shadow:none,){
+    background-color:$background-color;
+    color:$color;
+    padding:$pd-ud $pd-lr;
+    border:$border;
+    box-shadow: $shadow;
+    border-radius:4px; 
+}
+
+.btn{
+    font-size:17px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all 0.5s;
+    padding:13px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &:not(:last-child){
+        margin-right:16px;
+    }
+    &--black{
+         @include btn($black, #fff, 13px, 25px, 1px solid $black, 0px 2px 3px rgba(0, 0, 0, 0.16));
+    }
+    &--black:hover{
+        background-color: #fff;
+        color: $black;
+        border: 1px solid #DADEDF;
+    }
+    &--white{
+        font-size:18px;
+        @include btn(#fff, $black, 13px, 25px, 1px solid #DADEDF);
+    }
+    &--white:hover{
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+}
+
+@media (max-width:576px){
+    .btn{
+        &--black, &--white{
+            padding:13px 8px;
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+.overlay{
+    opacity: 0.5;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+    &--show{
+        visibility:visible
+    }
+}
