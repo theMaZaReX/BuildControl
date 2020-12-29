@@ -608,6 +608,7 @@ body {
 @media (max-width: 576px) {
   .header-content__title {
     font-size: 26px;
+    line-height: 42px;
   }
 }
 
